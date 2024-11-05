@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+        <meta property="og:title" content="Calendar | Ahri1412"/>
+        <meta property="og:image" content="https://server.ahrixthinh.net/Photos/bg-blog.jpg"/>
+        <meta property="og:url" content="https://ahrixthinh.net/calendar"/>
+        <meta property="og:site_name" content="Ahri1412"/>
+        <meta property="og:description" content="Lunar Calendar">
+        <meta property="og:type" content="website"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:title" content="Calendar | Ahri1412"/>
+        <meta name="twitter:description" content="Lunar Calendar">
+        <meta name="twitter:image" content="https://server.ahrixthinh.net/Photos/bg-blog.jpg"/>
+        <link rel="shortcut icon" href="https://server.ahrixthinh.net/Photos/icon.jpg">
+        
+        <title id="web_name">Calendar | Ahri1412</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <script src="https://ahrixthinh.net:83/calendar/lunar.js"></script>
+    </head>
+    
+    <body>
+        <div id="hide"></div>
+
+        <i id="question" class="fa fa-question" aria-hidden="true">
+            <ul>
+                <li style="margin: 0 0 10px 0;">Left is Gregorian calendar (a.k.a Solar calendar)</li>
+                <li>Right is Lunar calendar</li>
+            </ul>
+        </i>
+
+        <audio autoplay loop>
+            <source src="https://ahrixthinh.net:83/calendar/2020Mid Autumn Festival Event BGM.mp3" type="audio/ogg">
+        </audio>
+
+    
+
+        <div id="calendar">
+            <div id="solar">
+                <p id="year"></p>
+                <div class="change_month">
+                    <div id="left"></div>
+                    <p id="month"></p>
+                    <div id="right"></div>
+                </div>
+                <table class="table" cellpadding="8">
+                    <tr>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wes</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                        <th>Sun</th>
+                    </tr>
+                </table>
+
+                <table id="date_list" class="table" cellpadding="8">
+                    <tr>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                    </tr>
+                    <tr>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                    </tr>
+                    <tr>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                    </tr>
+                    <tr>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                    </tr>
+                    <tr>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                    </tr>
+                    <tr>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="lunar">
+                <p id="year"></p>
+                <div class="change_month">
+                    <div id="left"></div>
+                    <p id="month"></p>
+                    <div id="right"></div>
+                </div>
+
+                <table class="table" cellpadding="8">
+                    <tr>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wes</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                        <th>Sun</th>
+                    </tr>
+                </table>
+
+                <table id="date_list_lunar" class="table" cellpadding="8">
+                    <tr>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                    </tr>
+                    <tr>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                    </tr>
+                    <tr>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                    </tr>
+                    <tr>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                    </tr>
+                    <tr>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                    </tr>
+                    <tr>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                        <td>‎</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <video src="https://ahrixthinh.net:83/calendar/loop.mp4" muted autoplay loop style="width: 100vw; height: 100vh; object-fit: cover; object-position: left; z-index: 0;"></video>
+    </body>
+
+    <script>
+        const date = new Date
+        var current_month = date.getMonth() + 1,
+            current_year = date.getFullYear(),
+            pre_month = current_month == 0 ? 12 : current_month - 1,
+            next_month = current_month + 1 == 13 ? 1 : current_month + 1,
+            pre_year = pre_month == 12 ? current_year - 1 : current_year,
+            next_year = next_month == 1 ? current_year + 1 : current_year,
+
+            current_lunar_month = date.getMonth() == 0 ? 12 : date.getMonth(),
+            current_lunar_year = current_lunar_month == 12 ? current_year - 1 : current_year,
+            
+            months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    
+        
+        
+        const getAllDaysInMonth = (month, year) =>
+            Array.from(
+                {length: new Date(year, month, 0).getDate()}, // get next month, zeroth's (previous) day
+                (_, i) => new Date(year, month - 1, i + 1)    // get current month (0 based index)
+        )
+
+        var datelist_current = getAllDaysInMonth(current_month, current_year),
+            datelist_pre = getAllDaysInMonth(pre_month, pre_year),
+            datelist_next = getAllDaysInMonth(next_month, next_year)
+        var append_list = ""
+        var append_list_lunar = ""
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function setCalendar(){
+            $("#date_list td").css("opacity", "0")
+            $("#date_list_lunar td").css("opacity", "0")
+
+            $("#solar #year").html(current_year)
+            $("#solar #month").html(months[current_month-1])
+            $("#lunar #year").html(current_lunar_year)
+            $("#lunar #month").html(months[current_lunar_month-1])
+            await sleep(250)
+            $("#date_list").html("")
+            $("#date_list_lunar").html("")
+            for (var i = 0 ; i < datelist_current.length; i++){
+                if(datelist_current[i].getDate() == 1 || datelist_current[i].getDay() == 1){
+                    append_list += `<tr>`
+                    append_list_lunar += `<tr>`
+                }
+
+                if(datelist_current[i].getDate() == 1){
+                    
+                    if(datelist_current[i].getDay() == 0){
+                        for(var j = 0; j < 6; j++){
+                            append_list += `<td></td>`
+                        }
+                    }else{
+                        for(var j = 0; j < datelist_current[i].getDay() - 1; j++){
+                            append_list += `<td></td>`
+                        }
+                    }
+                    append_list_lunar = append_list
+                }
+
+                if (datelist_current[i].getDate() == date.getDate() && datelist_current[i].getMonth() == date.getMonth() && datelist_current[i].getFullYear() == date.getFullYear()){
+                    append_list += `<td style="background-color: #868043ad">${datelist_current[i].getDate()}</td>`
+                    append_list_lunar += `<td id="current_lunar_date" style="background-color: #665f38">${Solar.fromYmd(datelist_current[i].getFullYear(),datelist_current[i].getMonth() + 1,datelist_current[i].getDate()).getLunar().getDay()}</td>`
+                }else{
+                    append_list += `<td>${datelist_current[i].getDate()}</td>`
+                    append_list_lunar += `<td id="month_${Math.abs(Solar.fromYmd(datelist_current[i].getFullYear(),datelist_current[i].getMonth() + 1,datelist_current[i].getDate()).getLunar().getMonth())}" >${Solar.fromYmd(datelist_current[i].getFullYear(),datelist_current[i].getMonth() + 1,datelist_current[i].getDate()).getLunar().getDay()}</td>`
+                }
+                
+                
+
+                if(datelist_current[i].getDay() == 0 || i == datelist_current.length - 1){
+                    if(datelist_current[i].getDay() != 0){
+                        for(var j = 0; j < 7 - datelist_current[i].getDay(); j++){
+                            append_list += `<td></td>`
+                            append_list_lunar += `<td></td>`
+                        }
+                    }
+                    append_list += `</tr>`
+                    append_list_lunar += `</tr>`
+                    $("#date_list").append(append_list)
+                    $("#date_list_lunar").append(append_list_lunar)
+                    append_list = ``
+                    append_list_lunar = ``
+
+                    if(i == datelist_current.length - 1 && document.querySelectorAll(`#date_list_lunar tr`).length < 6){
+                        append_list += `<tr>`
+                        append_list_lunar += `<tr>`
+                        for(var j = 0; j < 7 ; j++){
+                            append_list += `<td>‎</td>`
+                            append_list_lunar += `<td>‎</td>`
+                        }
+                        append_list += `</tr>`
+                        append_list_lunar += `</tr>`
+                        $("#date_list").append(append_list)
+                        $("#date_list_lunar").append(append_list_lunar)
+                        append_list = ``
+                        append_list_lunar = ``
+                    }
+                }
+            }
+
+            lunar_date_highlight()
+            
+
+            await sleep(250)
+            $("#date_list td").css("opacity", "1")
+            $("#date_list_lunar td").css("opacity", "1")
+        }
+
+        
+
+        function lunar_date_highlight(){
+            for(var i = 0; i < document.querySelectorAll(`#date_list_lunar td`).length; i++){
+                if (document.querySelectorAll(`#date_list_lunar td`)[i].id == "current_lunar_date") continue
+                document.querySelectorAll(`#date_list_lunar td`)[i].style.background = "transparent"
+            }
+            
+            for(var i = 0; i < document.querySelectorAll(`#month_${current_lunar_month}`).length; i++){
+                document.querySelectorAll(`#month_${current_lunar_month}`)[i].style.background = "rgb(67 67 62)"
+                
+            }
+        }
+
+        window.addEventListener("load", ()=>{
+            setCalendar()
+        })
+
+        $("#solar .change_month #left").click(()=>{
+            current_month = current_month - 1 == 0 ? 12 : current_month - 1
+            current_year = current_month == 12 ? current_year - 1 : current_year
+
+            pre_month = current_month - 1 == 0 ? 12 : current_month - 1
+            next_month = current_month + 1 == 13 ? 1 : current_month + 1
+            pre_year = pre_month == 12 ? current_year - 1 : current_year
+            next_year = next_month == 1 ? current_year + 1 : current_year
+
+            current_lunar_month = current_month - 1 == 0 ? 12 : current_month - 1
+            current_lunar_year = current_lunar_month == 12 ? current_year - 1 : current_year
+            
+            
+
+            datelist_current = datelist_pre
+            datelist_pre = getAllDaysInMonth(pre_month, pre_year)
+            datelist_next = getAllDaysInMonth(next_month, next_year)
+            setCalendar()
+        })
+
+        $("#solar .change_month #right").click(()=>{
+            current_month = current_month + 1 == 13 ? 1 : current_month + 1
+            current_year = current_month == 1 ? current_year + 1 : current_year
+
+            pre_month = current_month - 1 == 0 ? 12 : current_month - 1
+            next_month = current_month + 1 == 13 ? 1 : current_month + 1
+            pre_year = pre_month == 12 ? current_year - 1 : current_year
+            next_year = next_month == 1 ? current_year + 1 : current_year
+            
+            current_lunar_month = current_month - 1 == 0 ? 12 : current_month - 1
+            current_lunar_year = current_lunar_month == 12 ? current_year - 1 : current_year
+            
+            datelist_current = datelist_next
+            datelist_pre = getAllDaysInMonth(pre_month, pre_year)
+            datelist_next = getAllDaysInMonth(next_month, next_year)
+            setCalendar()
+        })
+
+        $("#lunar .change_month #left").click(()=>{
+            current_lunar_month -= 1
+            if(current_lunar_month < 1){
+                current_lunar_month = 12
+                current_lunar_year -= 1
+            }
+            $("#lunar #year").html(current_lunar_year)
+            $("#lunar #month").html(months[current_lunar_month-1])
+            lunar_date_highlight()
+        })
+
+        $("#lunar .change_month #right").click(()=>{
+            current_lunar_month += 1
+            if(current_lunar_month > 12){
+                current_lunar_month = 1
+                current_lunar_year += 1
+            }
+            $("#lunar #year").html(current_lunar_year)
+            $("#lunar #month").html(months[current_lunar_month-1])
+            lunar_date_highlight()
+        })
+
+    //audio
+        document.querySelector("audio").volume = 0.2
+        document.addEventListener('click', musicPlay);
+        function musicPlay() {
+            document.querySelector("audio").play();
+            document.removeEventListener('click', musicPlay);
+        }
+
+    $("#hide").click(()=>{
+        if($("#solar").parent().css("opacity") == 1){
+            $("#solar").parent().css("opacity", "0")
+        }else{
+            $("#solar").parent().css("opacity", "1")
+        }
+    })
+        
+    
+    </script>
+
+    <style>
+        @font-face {
+            font-family: 'fontello';
+            src: url('https://ahrixthinh.net:83/calendar/fontello.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            
+            overflow: hidden;
+        }
+
+        i:hover ul {
+            opacity: 100% !important;
+            margin: 5px 0 0 0 !important;
+        }
+
+        #question ul {
+            margin: 20px 0 0 0; 
+            list-style: inside; 
+            padding: 10px; 
+            width: 420px; 
+            background-color: #f0f8ff9e; 
+            color: #09131d; 
+            border-radius: 5px; 
+            position: absolute; 
+            opacity: 0%; 
+            transition: 0.5s;
+            
+
+            font-family: fangsong;
+            pointer-events: none;
+        }
+
+        
+
+        #hide::before {
+            content: "\f13e";
+        }
+        #hide, #question {
+            position: absolute;
+            font-size: 20px;
+            font-family: fontello;
+            color: aliceblue;
+            margin: 20px 0 0 20px;
+            z-index: 2;
+            transition-property: color;
+            transition: 0.25s;
+        }
+
+        #question {
+            font-family: Fontawesome; 
+            margin: 50px 0 0 20px;
+        }
+
+        #hide:hover, #question:hover{
+            color: rgba(121, 121, 121, 0.781);
+        }
+
+        
+
+
+        #calendar {
+            display: flex;
+            width: 100%; 
+            height: 100%; 
+            justify-content: center; 
+            align-items: center; 
+            font-family: fangsong; 
+            position: absolute; 
+            z-index: 1; 
+            transition-property: opacity; 
+            transition: 0.5s;
+        }
+
+        #solar #year, #lunar #year{
+            margin: 50px 0 20px 0;
+        }
+
+        #solar #month, #lunar #month{
+            margin: 0px 10px 0 10px;
+            width: 130px;
+        }
+
+        #solar, #lunar{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 495px;
+            width: 370px;
+            color: #b3a95e;
+            text-align: center;
+            box-shadow: 0px 0px 20px black;
+
+        }
+
+        #solar p, #lunar p{ 
+            font-size: 30px;
+        }
+
+        #solar{
+            background-image: url(https://ahrixthinh.net:83/calendar/solar.jpg);
+            background-size: contain;
+            margin-right: 200px;
+        }
+
+        #lunar{
+            background-image: url(https://ahrixthinh.net:83/calendar/lunar.jpg);
+            background-size: contain;
+        }
+
+        .table {
+            width: calc(100% - 70px);
+            font-size: 18px;
+            border-spacing: 0;
+            border-collapse: collapse;
+            mix-blend-mode: lighten;
+        }
+        #date_list td, #date_list_lunar td {
+            border: 1px ridge #b3a95e;
+            box-shadow: 0px 0px 5px black;
+            text-shadow: 2px 2px 2px black;
+            opacity: 0;
+            transition: 0.25s;
+        }
+
+        
+
+        .change_month{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        #left, #right{
+            font-family: fontello;
+            font-size: 25px;
+        }
+        #left::before{
+            content: "\e800";
+        }
+        #right::before{
+            content: "\e801";
+        }
+        #left:hover, #right:hover{
+            color: #767676;
+        }
+
+
+        @media only screen and (max-width: 600px) {
+            body{            
+                overflow: auto;
+            }
+
+            #hide{
+                font-size: 15px;
+                margin: 10px 0 0 10px;
+            }
+
+            #question  {
+                font-size: 15px;
+                margin: 30px 0 0 10px;
+            }
+
+            #question ul{
+                width: 320px;
+            }
+
+            #calendar {
+                flex-direction: column;
+                height: auto;
+            }
+
+            #solar, #lunar{
+                height: 380px;
+                width: 284px;
+            }
+
+            #solar{
+                margin: 40px 0 40px 0;
+            }
+
+            #lunar{
+                margin: 0px 0 40px 0;
+            }
+
+            #solar #year, #lunar #year{
+                margin: 30px 0 10px 0;
+            }
+
+            #solar #month, #lunar #month{
+                margin: 0px 10px 0 10px;
+                width: 90px;
+            }
+
+            .change_month {
+                margin-bottom: 20px;
+            }
+
+
+            #solar p, #lunar p{ 
+                font-size: 20px;
+            }
+
+            .table {
+                width: calc(100% - 45px);
+                font-size: 12px;
+            }
+
+            video {
+                height: 880px !important;
+            }
+        }
+
+
+    </style>
+
+
+</html>
